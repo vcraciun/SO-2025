@@ -4,11 +4,10 @@
 #include <sys/mman.h>
 #include <sys/wait.h>
 #include <stdatomic.h>
-#include <stdatomic.h>
 #include <time.h>
 
 #define N 5000000000
-#define PROCESE 8
+#define PROCESE 2
 
 atomic_flag lock = ATOMIC_FLAG_INIT;
 
@@ -47,8 +46,13 @@ int main() {
             long long end = (i == PROCESE - 1) ? N : start + range - 1;
 
             long long local_sum = 0;
-            for (long long j = start; j <= end; j++) {
-                local_sum += j;
+            for (long long j = start; j <= end; j++)
+            {
+                //local_sum += j;
+                if (i%2 == 0)
+                    local_sum += 1;
+                else
+                    local_sum -= 1;
             }
 
             enter_lock();

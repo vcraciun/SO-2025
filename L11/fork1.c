@@ -6,6 +6,7 @@ int main() {
     pid_t pid;
 
     pid = fork();
+    
     if (pid < 0) {
         perror("Error");
         return 1;
