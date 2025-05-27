@@ -53,3 +53,12 @@ dkms.conf
 L11/fork1
 L11/fork2
 L11/fork3
+L13/p1/pipes1
+L13/p2/receiver
+L13/p2/sender
+L13/p3/string_hash
+L13/p4/child
+L13/p4/parent
+L13/p5/bruteforce-password
+L13/p6/child
+L13/p6/parent
